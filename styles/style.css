@@ -1,0 +1,74 @@
+html {
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.name {
+  font-size: 60px;
+  text-align: center;
+}
+
+.myheader {
+  background: #d8d8d8;
+  color: #2c2e30;
+  height: 100px;
+}
+
+.content {
+  padding: 16px;
+}
+
+#logo{
+  margin-left: 0px;
+  height: 100px;
+  width: 150px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticky + .content {
+  padding-top: 150px;
+}
+
+.headerText {
+  right: 0px;
+  font-size: 10px;
+  text-align: right;
+  background: inherit;
+}
+
+.svgLogo{
+  top: 0%;
+  left: 0px;
+  background: inherit;
+
+}
+
+.split {
+  height: inherit;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+
+#headerText1 {
+  padding-right: 10%;
+  font-size: 12px;
+}
+
+#svgLogo {
+  padding-left: 10%;
+}
+
+#fed {
+  padding-top: 2%;
+}
+
+#pc{
+  line-height: 0%;
+}
