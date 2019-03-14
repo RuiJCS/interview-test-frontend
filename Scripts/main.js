@@ -5,7 +5,7 @@ function fill(array) {
     var list = document.getElementById("list");
     var i = 0;
 
-    for (let index = 0; index < array.length*20; index++) {
+    for (let index = 0; index < array.length*50; index++) {
         const element = array[index];
         var item = document.createElement('li');
         item.appendChild(document.createTextNode(array[i]))
@@ -19,3 +19,16 @@ function fill(array) {
 }
 
 fill(filler);
+
+window.onscroll = function () {backgroundTranparency()};
+
+var header = document.getElementById('myHeader');
+
+function backgroundTranparency(params) {
+    if (window.pageYOffset > 150) {
+        header.style.backgroundColor= 'transparent';
+    }
+    else {
+        header.style.backgroundColor = '#d8d8d8';
+    }
+}
