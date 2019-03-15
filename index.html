@@ -3,7 +3,7 @@
   <head>
 	<meta charset="utf-8">
 	<title>My test page</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> -->
 	<link href="styles/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
@@ -23,18 +23,18 @@
 	</div>
 
 	<div id="profile">
-		<div id="photoArea" class="splitProfile">
+		<div id="photoArea">
 			<img src="assets/images/O_dark.svg" id="profilePic">
 		</div>
 
-		<div id="details" class="splitProfile">
+		<div id="details">
 			<h2>Rui Soares</h2>
 			<p>Age: 23</p>
 			<p>Vila Verde, Portugal</p>
 			<p>Occupation: Frontend Developer</p>
 		</div>
 
-		<div id="about" class="splitProfile">
+		<div id="about">
 			<p>About me</p>
 			<p id="aboutText">My Name Is john Smith lorem empus id fringilla molestie
 				ornare diam in olestie ipsum etium rosn ollicitudin est,
@@ -43,13 +43,35 @@
 		</div>
 	</div>
 
-	<div class="content">
-	  <ul id="list"> <!-- changed to list in the tutorial -->
-		<li>Frontend</li>
-		<li>developer</li>
-		<li>Challenge</li>
-	  </ul>
+	<div class="content"> 
+		<div id="TicTacToeIntro">
+			<h1>Tic tac toe games</h1>
+			<p>Welcome to the best game in the world</p>
+		</div>
+		<div id="gameContainer">
+			<div id="playerOne">
+				<h1>Player 1</h1>
+				<p id="winsOne">0</p>
+			</div>
+			<div id="game" class="splitGameArea">
+					<div id="topleft" class="gameColumns" onclick="onclickboard(1);"></div>
+					<div id="topcenter" class="gameColumns" onclick="onclickboard(2);"></div>
+					<div id="topright" class="gameColumns" onclick="onclickboard(3);"></div>
+					<div id="middleleft" class="gameColumns" onclick="onclickboard(4);"></div>
+					<div id="middlecenter" class="gameColumns" onclick="onclickboard(5);"></div>
+					<div id="middleright" class="gameColumns" onclick="onclickboard(6);"></div>
+					<div id="botleft" class="gameColumns" onclick="onclickboard(7);"></div>
+					<div id="botcenter" class="gameColumns" onclick="onclickboard(8);"></div>
+					<div id="botright" class="gameColumns" onclick="onclickboard(9);"></div>
+			</div>
+			<div id="playerTwo">
+				<h1>Player 2</h1>
+				<p id="winsTwo">0</p>
+			</div>
+		</div>
+	</div>
 
 	<script src="Scripts/main.js"></script>
+	<script src="Scripts/actions.js"></script>
   </body>
 </html>

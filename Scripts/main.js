@@ -1,25 +1,4 @@
 
-var filler = ["Frontend","developer","Challenge"]
-
-function fill(array) {
-    var list = document.getElementById("list");
-    var i = 0;
-
-    for (let index = 0; index < array.length*50; index++) {
-        const element = array[index];
-        var item = document.createElement('li');
-        item.appendChild(document.createTextNode(array[i]))
-        list.appendChild(item)
-        if(index % 3 == 0) {
-            i = 0;
-        }
-        else 
-        i++;
-    }
-}
-
-fill(filler);
-
 window.onscroll = function () {backgroundTranparency()};
 
 var header = document.getElementById('myHeader');
@@ -32,3 +11,19 @@ function backgroundTranparency(params) {
         header.style.backgroundColor = '#d8d8d8';
     }
 }
+
+var gameContainer = document.getElementById("gameContainer");
+var playerOne = document.getElementById("playerOne");
+var poHeight = playerOne.offsetHeight;
+gameContainer.style.height = window.innerHeight;
+gameContainer.style.width = window.innerWidth;
+var conHeight = gameContainer.offsetHeight;
+playerOne.style.marginTop = ((conHeight - poHeight)/2) + 'px';
+
+var playerTwo = document.getElementById("playerTwo");
+var poHeight = playerTwo.offsetHeight;
+gameContainer.style.height = window.innerHeight;
+gameContainer.style.width = window.innerWidth;
+var conHeight = gameContainer.offsetHeight;
+playerTwo.style.marginTop = ((conHeight - poHeight)/2) + 'px';
+

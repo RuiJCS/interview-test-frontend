@@ -1,5 +1,5 @@
 html {
-  font-size: 12px;
+  font-size: 15px;
   font-family: 'glacial-indifference';
 }
 
@@ -14,105 +14,188 @@ html {
   height: 100px;
 }
 
-.content {
-  padding: 16px;
-  text-align: center;
-}
 
 #logo{
-  margin-left: 0px;
-  height: 100px;
-  width: 150px;
+	margin-left: 0px;
+	height: 100px;
+	width: 150px;
 }
 
 .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
-
-.sticky + .content {
-  padding-top: 100px;
+	position: fixed;
+	top: 0;
+	width: 100%
 }
 
 .headerText {
-  right: 0px;
-  font-size: 10px;
-  text-align: right;
-  background: inherit;
+	right: 0px;
+	font-size: 10px;
+	text-align: right;
+	background: inherit;
 }
 
 .svgLogo{
-  top: 0%;
-  left: 0px;
-  background: inherit;
-
+	top: 0%;
+	left: 0px;
+	background: inherit;
+	
 }
 
 .split {
-  height: inherit;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
+	height: inherit;
+	width: 50%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
 }
 
 #headerText1 {
-  padding-right: 20%;
-  font-size: 12px;
+	padding-right: 20%;
+	font-size: 12px;
 }
 
 #svgLogo {
-  padding-left: 20%;
+	padding-left: 20%;
 }
 
 #fed {
-  padding-top: 2%;
+	padding-top: 2%;
 }
 
 #pc{
-  line-height: 0%;
+	line-height: 0%;
 }
 
 #profile {
-  padding: 150px;
+	padding: 150px;
+	padding-block-end: 0px;
 }
 
 #profile::after {
-  content: "";
-  clear: both;
-  display: table;
+	content: "";
+	clear: both;
+	display: table;
 }
 
 #profilePic {
-  height: 75%;
-  width: 75%;
+	height: 75%;
+	width: 75%;
 }
 
 #about {
-  float: right;
-  width: 30%;
-  padding: 5px;
-  text-align: right;
+	float: left;
+	width: 30%;
+	padding: 5px;
+	text-align: right;
 }
 
 #details {
-  float: left;
-  width: 45%;
-  padding: 5px;
+	float: left;
+	width: 45%;
+	padding: 5px;
 }
 
 #photoArea {
-  float: left;
-  width: 20%;
-  padding: 5px;
+	float: left;
+	width: 20%;
+	padding: 5px;
+}
+
+#TicTacToeIntro {
+	font-size: 15px;
+	font-family: 'glacial-indifference';
+	padding-bottom: 50px;
 }
 
 @font-face{
-  font-family: "glacial-indifference";
-  src: url("assets/fonts/glacial-indifference-regular-webfont.ttf");
-  src:
-  url("assets/fonts/glacial-indifference-bold-webfont.woff") format("woff"),
-  url("assets/fonts/glacial-indifference-italic-webfont.woff") format("woff"),
-  url("assets/fonts/glacial-indifference-regular-webfont.woff") format("woff");
+	font-family: "glacial-indifference";
+	src: url("assets/fonts/glacial-indifference-regular-webfont.ttf");
+	src:
+	url("assets/fonts/glacial-indifference-bold-webfont.woff") format("woff"),
+	url("assets/fonts/glacial-indifference-italic-webfont.woff") format("woff"),
+	url("assets/fonts/glacial-indifference-regular-webfont.woff") format("woff");
+}
+
+.content {
+  padding: 16px;
+  text-align: center;
+  background-color: #f6f8f9;
+  height: 100%;
+  width: 100%;
+}
+
+#game {
+	background-color: white;
+	display: grid;
+	text-align: center;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto;
+	/* align-self: center; */
+}
+
+.gameColumns {
+	border: 1px solid #d8d8d8;
+	height: 200px;
+	width: 300px;
+	max-width: 300px;
+	max-height: 200px;
+	font-size: 30px;
+	align-items: center;
+	cursor: pointer;
+}
+
+#topleft, #topcenter, #topright {
+	border-bottom: 1px solid #2c2e30; 
+}
+
+#topleft, #middleleft, #botleft {
+	border-right: 1px solid #2c2e30;
+}
+
+#topright, #middleright, #botright {
+	border-left: 1px solid #2c2e30;
+}
+
+#botleft, #botcenter, #botright {
+	border-top: 1px solid #2c2e30;
+}
+
+#gameContainer {
+	width: 100%;
+	overflow: hidden;
+}
+
+#gameContainer::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+
+#winsOne {
+	font-size: 100px;
+}
+
+#winsTwo {
+	font-size: 100px;
+	/* transform: translateY(-75%); */
+}
+
+#playerTwo {
+	float: left;
+	display: inline;
+	width: 25%;
+	text-align: center;
+}
+
+#playerOne {
+	float: left;
+	width: 25%;
+	text-align: center;
+}
+.splitGameArea {
+	float: left;
+	height: inherit;
+	width: 50%;
+	text-align: center;
 }
