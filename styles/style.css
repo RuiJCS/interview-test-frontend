@@ -68,7 +68,8 @@ html {
 
 #profile {
 	padding: 150px;
-	padding-block-end: 0px;
+  padding-block-end: 0px;
+  background-color: white;
 }
 
 #profile::after {
@@ -198,4 +199,32 @@ html {
 	height: inherit;
 	width: 50%;
 	text-align: center;
+}
+
+#statistics {
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  padding:20px;
+}
+
+.splitStatistics {
+  float: left;
+  width:50%;
+}
+
+.gameVictoriesSplit {
+  font-size: 30px;
+  float:left;
+  width: 50%;
+}
+
+.splitGameHistory {
+  height: 50%;
+}
+
+.squareSVG {
+  fill:transparent;
+  stroke-width:3;
+  stroke:#d8d8d8;
 }

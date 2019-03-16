@@ -5,6 +5,8 @@ const state = {
 	board: Array(9).fill(null),
 	pc_wins: 0,
 	player_wins: 0,
+	saved_player_wins: 0,
+	saved_pc_wins: 0,
 }
 
 var cells = [
@@ -31,14 +33,30 @@ function onclickboard(index) {
 			console.log('I win');
 			var cell = document.getElementById('winsTwo');
 			cell.textContent = ++state.pc_wins;
-			clearBoard();
+			if (state.pc_wins > 2) {
+				window.alert("PC wins, congrats!!!");
+				state.saved_pc_wins++;
+				gameWin();
+			}
+			else {
+				window.alert("This round goes to PC!!!");
+				clearBoard();
+			}
 		}
 	}
 	else{
 		console.log('You win');
 		var cell = document.getElementById('winsOne');
 		cell.textContent = ++state.player_wins;
-		clearBoard();
+		if(state.player_wins > 2) {
+			window.alert("Player 1 wins, congrats!!!");
+			state.saved_player_wins++;
+			gameWin();
+		}
+		else {
+			window.alert("This round goes to Player 1");
+			clearBoard();
+		}
 	}
 }
 
@@ -126,9 +144,20 @@ function detectWin(lookup) {
 }
 
 function clearBoard() {
-	for (let index = 0; index < state.board_size * state.board_size; index++) {
-		var cell = document.getElementById(cells[index])
+	cells.forEach(element => {
+		var cell = document.getElementById(element);
 		cell.innerHTML='';
-	}
+	});
+
 	state.board = Array(9).fill(null);
+}
+
+function gameWin() {
+	var cell = document.getElementById('winsOne');
+	cell.textContent = 0;
+	state.player_wins = 0;
+	var cell = document.getElementById('winsTwo');
+	cell.textContent = 0;
+	state.player_wins = 0;
+	clearBoard();
 }
