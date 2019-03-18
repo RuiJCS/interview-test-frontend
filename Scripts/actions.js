@@ -10,6 +10,10 @@ const state = {
 	wins : [],
 	needed_wins: 3,
 	max_length: 9,
+	starting_time: 0,
+	accumulated_time: 0,
+	started: false,
+	timer: null,
 }
 
 var cells = [
@@ -25,8 +29,11 @@ var cells = [
 ]
 
 function onclickboard(index) {
-	if(state.board.length == 0) {
-		state.starting_time = state.date.getTime();
+	var date = new Date();
+	if(!state.started) {
+		state.started = true;
+		state.starting_time = date.getTime();
+		state.timer = setInterval(updateClock,1000);
 	}
 	var valid = registerUser(index);
 	if (!valid)
@@ -37,7 +44,6 @@ function onclickboard(index) {
 		win = detectWin(!state.player_pick);
 		if(win[0]){
 			drawWinLine(win[1],win[2]);
-			console.log('I win');
 			var cell = document.getElementById('winsTwo');
 			cell.textContent = ++state.pc_wins;
 			if (state.pc_wins >= state.needed_wins) {
@@ -58,7 +64,6 @@ function onclickboard(index) {
 	}
 	else{
 		drawWinLine(win[1],win[2]);
-		console.log('You win');
 		var cell = document.getElementById('winsOne');
 		cell.textContent = ++state.player_wins;
 		if(state.player_wins >= state.needed_wins) {
@@ -110,7 +115,6 @@ function registerPC() {
 	}
 	else 
 		{
-			console.log(index);
 			return;
 		}
 }
@@ -213,12 +217,19 @@ function clearBoard() {
 }
 
 function gameWin() {
+	var date = new Date();
 	var cell = document.getElementById('winsOne');
 	cell.textContent = 0;
 	state.player_wins = 0;
 	var cell = document.getElementById('winsTwo');
 	cell.textContent = 0;
 	state.pc_wins = 0;
+	state.started = false;
+	state.accumulated_time += date.getTime() - state.starting_time;
+	clearInterval(state.timer);
+	state.starting_time = 0;
+	var timer = document.getElementById("currTimer");
+	timer.textContent = "00:00:00";
 	clearBoard();
 }
 
@@ -270,10 +281,31 @@ function updateStats() {
 		}
 	}
 
+	var time = document.getElementById("time");
+	time.textContent = msToTime(state.accumulated_time);
+
+}
+
+function msToTime(duration) {
+	var milliseconds = parseInt((duration % 1000) / 100),
+	  seconds = Math.floor((duration / 1000) % 60),
+	  minutes = Math.floor((duration / (1000 * 60)) % 60),
+	  hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+	  
+	hours = (hours < 10) ? "0" + hours : hours;
+	minutes = (minutes < 10) ? "0" + minutes : minutes;
+	seconds = (seconds < 10) ? "0" + seconds : seconds;
+  
+	return hours + ":" + minutes + ":" + seconds;
 }
 
 function scrollDiv(id) {
 	var div = document.getElementById(id);
-	// div.scrollTop = div.scrollHeight - div.clientHeight;
 	div.scrollIntoView();
+}
+
+function updateClock() {
+	var date = new Date();
+	var timer = document.getElementById("currTimer");
+	timer.textContent = msToTime(date.getTime() - state.starting_time);
 }

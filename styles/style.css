@@ -205,12 +205,14 @@ html {
   text-align: center;
   width: 100%;
   background-color: white;
-  padding:20px;
+  /* padding-top:40px; */
+  padding-top: 40px;
 }
 
 .splitStatistics {
   float: left;
   width:50%;
+  height: 100%;
 }
 
 .gameVictoriesSplit {
@@ -220,7 +222,7 @@ html {
 }
 
 .splitGameHistory {
-  height: 50%;
+  height: 100%;
 }
 
 .squareSVG {
@@ -232,4 +234,26 @@ html {
 .svgVictories {
 	text-align: center;
 	float: center;
+}
+
+#totalTime {
+	float: left;
+	width: 100%;
+	align-items: center;
+}
+
+#time{
+	font-size: 40px;
+}
+
+#timer {
+	float:left;
+	height:100%;
+	width:100%;
+	text-align: center;
+	background-color: #f6f7f8;
+}
+
+#currTimer {
+	font-size: 40px;
 }
