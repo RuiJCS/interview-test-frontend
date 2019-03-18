@@ -26,4 +26,3 @@ gameContainer.style.height = window.innerHeight;
 gameContainer.style.width = window.innerWidth;
 var conHeight = gameContainer.offsetHeight;
 playerTwo.style.marginTop = ((conHeight - poHeight)/2) + 'px';
-

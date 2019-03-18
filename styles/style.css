@@ -1,6 +1,7 @@
 html {
   font-size: 15px;
   font-family: 'glacial-indifference';
+  overflow-x: hidden;
 }
 
 .name {
@@ -135,11 +136,10 @@ html {
 }
 
 .gameColumns {
+	display: inline-block;
 	border: 1px solid #d8d8d8;
 	height: 200px;
-	width: 300px;
-	max-width: 300px;
-	max-height: 200px;
+	width: 313px;
 	font-size: 30px;
 	align-items: center;
 	cursor: pointer;
@@ -227,4 +227,9 @@ html {
   fill:transparent;
   stroke-width:3;
   stroke:#d8d8d8;
+}
+
+.svgVictories {
+	text-align: center;
+	float: center;
 }

@@ -7,6 +7,9 @@ const state = {
 	player_wins: 0,
 	saved_player_wins: 0,
 	saved_pc_wins: 0,
+	wins : [],
+	needed_wins: 3,
+	max_length: 9,
 }
 
 var cells = [
@@ -22,21 +25,30 @@ var cells = [
 ]
 
 function onclickboard(index) {
+	if(state.board.length == 0) {
+		state.starting_time = state.date.getTime();
+	}
 	var valid = registerUser(index);
 	if (!valid)
 		return;
 	var win = detectWin(state.player_pick);
-	if(!win) {
+	if(!win[0]) {
 		registerPC();
 		win = detectWin(!state.player_pick);
-		if(win){
+		if(win[0]){
+			drawWinLine(win[1],win[2]);
 			console.log('I win');
 			var cell = document.getElementById('winsTwo');
 			cell.textContent = ++state.pc_wins;
-			if (state.pc_wins > 2) {
+			if (state.pc_wins >= state.needed_wins) {
 				window.alert("PC wins, congrats!!!");
 				state.saved_pc_wins++;
+				if(state.wins.length >= state.max_length)
+					state.wins.shift();
+				state.wins.push("P2");
 				gameWin();
+				updateStats();
+				scrollDiv("statistics");
 			}
 			else {
 				window.alert("This round goes to PC!!!");
@@ -45,13 +57,19 @@ function onclickboard(index) {
 		}
 	}
 	else{
+		drawWinLine(win[1],win[2]);
 		console.log('You win');
 		var cell = document.getElementById('winsOne');
 		cell.textContent = ++state.player_wins;
-		if(state.player_wins > 2) {
+		if(state.player_wins >= state.needed_wins) {
 			window.alert("Player 1 wins, congrats!!!");
 			state.saved_player_wins++;
+			if(state.wins.length >= state.max_length)
+				state.wins.shift();
+			state.wins.push("P1");
 			gameWin();
+			updateStats();
+			scrollDiv("statistics");
 		}
 		else {
 			window.alert("This round goes to Player 1");
@@ -108,7 +126,7 @@ function detectWin(lookup) {
 
 
 		if (j==state.board_size)
-			return true;
+			return [true,i,-1];
 	}
 
 	// check columns
@@ -120,27 +138,69 @@ function detectWin(lookup) {
 		}
 
 		if (j==state.board_size)
-			return true;
+			return [true,-1,i];
 	}
 
-	var j = 0;
-	for (let i = 0; i < state.board_size; i++, j++) {
-			if(state.board[j*state.board_size + i] != lookup)
+	var j = 0, i = 0;
+	for (; i < state.board_size; i++, j++) {
+			if(state.board[i*state.board_size + j] != lookup)
 				break;
 
 	}
 	if (j==state.board_size)
-		return true;
+		return [true,state.board_size,j];
 
-	var j = 0;
-	for (let i = 2; i >= 0 ; i--, j++) {
-			if(state.board[j*state.board_size + i] != lookup)
+	var j = 0, i = state.board_size - 1;
+	for (; i >= 0 ; i--, j++) {
+			if(state.board[i*state.board_size + j] != lookup)
 				break;
 
 	}
 	if (j==state.board_size)
-		return true;
+		return [true,0,j];
 	return false;
+}
+
+function drawWinLine(rows,columns) {
+	if (rows > -1) {
+		if(columns == -1) {
+			for (let j = 0; j < state.board_size; j++) {
+				drawWinSymbol(rows, j);
+			}
+		}
+		else {
+			if(rows==state.board_size){
+				var j = 0;
+				for (let index = 0; index < state.board_size; index++, j++) {
+					drawWinSymbol(index, j);
+				}
+			}
+			else if (rows == 0) {
+				var j = 0;
+				for (let index = state.board_size-1; index >= 0; index--, j++) {
+					drawWinSymbol(index, j);
+				}
+			}
+		}
+	} else {
+		for (let index = 0; index < state.board_size; index++) {
+			drawWinSymbol(index,columns)
+			
+		}
+	}
+}
+
+function drawWinSymbol(rows, j) {
+	var cell = document.getElementById(cells[rows * state.board_size + j]);
+	cell.innerHTML = '';
+	var img = document.createElement('img');
+	if (state.board[rows * state.board_size + j] != state.player_pick)
+		img.src = "assets/images/O_bright.svg";
+	else
+		img.src = "assets/images/X_bright.svg";
+	img.style.height = 75 + '%';
+	img.style.width = 75 + '%';
+	cell.appendChild(img);
 }
 
 function clearBoard() {
@@ -158,6 +218,62 @@ function gameWin() {
 	state.player_wins = 0;
 	var cell = document.getElementById('winsTwo');
 	cell.textContent = 0;
-	state.player_wins = 0;
+	state.pc_wins = 0;
 	clearBoard();
+}
+
+var svgTexts = [
+	"svgText1",
+	"svgText2",
+	"svgText3",
+	"svgText4",
+	"svgText5",
+	"svgText6",
+	"svgText7",
+	"svgText8",
+	"svgText9",
+]
+
+var svgCircles = [
+	"svgCircle1",
+	"svgCircle2",
+	"svgCircle3",
+	"svgCircle4",
+	"svgCircle5",
+	"svgCircle6",
+	"svgCircle7",
+	"svgCircle8",
+	"svgCircle9",
+]
+
+function updateStats() {
+	if(state.saved_player_wins + state.saved_pc_wins > 0){
+		var plWins = Math.round((state.saved_player_wins/(state.saved_player_wins + state.saved_pc_wins)) * 100);
+		var pcWins = Math.round((state.saved_pc_wins/(state.saved_player_wins + state.saved_pc_wins)) * 100);
+		var winText = document.getElementById("svgTextP1V");
+		winText.textContent = plWins + "%";
+		var looseText = document.getElementById("svgTextP1L");
+		looseText.textContent = 100 - plWins + "%";
+		var winText = document.getElementById("svgTextP2V");
+		winText.textContent = pcWins + "%";
+		var looseText = document.getElementById("svgTextP2L");
+		looseText.textContent = 100 - pcWins + "%";
+
+		for (let index = 0; index < svgTexts.length; index++) {
+			var text = document.getElementById(svgTexts[index]);
+			text.textContent = state.wins[index];			
+			text.style.fontSize= "30px";
+			if (state.wins[index]!=null) {
+				var circ = document.getElementById(svgCircles[index]);
+				circ.style.fill = "#d8d8d8";
+			}
+		}
+	}
+
+}
+
+function scrollDiv(id) {
+	var div = document.getElementById(id);
+	// div.scrollTop = div.scrollHeight - div.clientHeight;
+	div.scrollIntoView();
 }
