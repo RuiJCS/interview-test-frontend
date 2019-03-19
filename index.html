@@ -2,9 +2,11 @@
 <html>
   <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>My test page</title>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"> -->
-	<link href="styles/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="styles/android.css" media="screen and (max-width: 481px)" />
+	<link rel="stylesheet" type="text/css" href="styles/desktop.css" media="screen and (min-width: 481px)" />
   </head>
   <body>
 	<div id="myHeader" class="myheader sticky">
@@ -24,7 +26,11 @@
 
 	<div id="profile">
 		<div id="photoArea">
-			<img src="assets/images/O_dark.svg" id="profilePic">
+			<svg height="200" width="200">
+				<circle
+				 cx="100" cy="100" r="99" stroke="#d8d8d8" stroke-width="2" fill="transparent" />
+				<text text-anchor="middle" x="50%" y="50%" fill="#d8d8d8">(Photo Area)</text>
+			</svg>
 		</div>
 
 		<div id="details">
@@ -61,16 +67,16 @@
 					<div id="middlecenter" class="gameColumns" onclick="onclickboard(5);"></div>
 					<div id="middleright" class="gameColumns" onclick="onclickboard(6);"></div>
 					<div id="botleft" class="gameColumns" onclick="onclickboard(7);"></div>
-					<div id="botcenter" class="gameColumns" onclick="onclickboard(8);"></div>
+					<div id="botcenter" class="gameColumns"onclick="onclickboard(8);"></div>
 					<div id="botright" class="gameColumns" onclick="onclickboard(9);"></div>
 			</div>
 			<div id="playerTwo">
 				<h1>Player 2</h1>
 				<p id="winsTwo">0</p>
 			</div>
-		</div>
-		<div id="timer">
-			<p id="currTimer">00:00:00</p>
+			<div id="timer">
+				<p id="currTimer">00:00:00</p>
+			</div>
 		</div>
 	</div>
 

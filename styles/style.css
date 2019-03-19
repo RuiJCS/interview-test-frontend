@@ -1,259 +1,259 @@
 html {
-  font-size: 15px;
-  font-family: 'glacial-indifference';
-  overflow-x: hidden;
-}
-
-.name {
-  font-size: 60px;
-  text-align: center;
-}
-
-.myheader {
-  background-color: #d8d8d8;
-  color: #2c2e30;
-  height: 100px;
-}
-
-
-#logo{
-	margin-left: 0px;
-	height: 100px;
-	width: 150px;
-}
-
-.sticky {
-	position: fixed;
-	top: 0;
-	width: 100%
-}
-
-.headerText {
-	right: 0px;
-	font-size: 10px;
-	text-align: right;
-	background: inherit;
-}
-
-.svgLogo{
-	top: 0%;
-	left: 0px;
-	background: inherit;
-	
-}
-
-.split {
-	height: inherit;
-	width: 50%;
-	position: fixed;
-	z-index: 1;
-	top: 0;
-}
-
-#headerText1 {
-	padding-right: 20%;
-	font-size: 12px;
-}
-
-#svgLogo {
-	padding-left: 20%;
-}
-
-#fed {
-	padding-top: 2%;
-}
-
-#pc{
-	line-height: 0%;
-}
-
-#profile {
-	padding: 150px;
-  padding-block-end: 0px;
-  background-color: white;
-}
-
-#profile::after {
-	content: "";
-	clear: both;
-	display: table;
-}
-
-#profilePic {
-	height: 75%;
-	width: 75%;
-}
-
-#about {
-	float: left;
-	width: 30%;
-	padding: 5px;
-	text-align: right;
-}
-
-#details {
-	float: left;
-	width: 45%;
-	padding: 5px;
-}
-
-#photoArea {
-	float: left;
-	width: 20%;
-	padding: 5px;
-}
-
-#TicTacToeIntro {
 	font-size: 15px;
 	font-family: 'glacial-indifference';
-	padding-bottom: 50px;
-}
-
-@font-face{
-	font-family: "glacial-indifference";
-	src: url("assets/fonts/glacial-indifference-regular-webfont.ttf");
-	src:
-	url("assets/fonts/glacial-indifference-bold-webfont.woff") format("woff"),
-	url("assets/fonts/glacial-indifference-italic-webfont.woff") format("woff"),
-	url("assets/fonts/glacial-indifference-regular-webfont.woff") format("woff");
-}
-
-.content {
-  padding: 16px;
-  text-align: center;
-  background-color: #f6f8f9;
-  height: 100%;
-  width: 100%;
-}
-
-#game {
+	overflow-x: hidden;
+  }
+  
+  .name {
+	font-size: 60px;
+	text-align: center;
+  }
+  
+  .myheader {
+	background-color: #d8d8d8;
+	color: #2c2e30;
+	height: 100px;
+  }
+  
+  
+  #logo{
+	  margin-left: 0px;
+	  height: 100px;
+	  width: 150px;
+  }
+  
+  .sticky {
+	  position: fixed;
+	  top: 0;
+	  width: 100%
+  }
+  
+  .headerText {
+	  right: 0px;
+	  font-size: 10px;
+	  text-align: right;
+	  background: inherit;
+  }
+  
+  .svgLogo{
+	  top: 0%;
+	  left: 0px;
+	  background: inherit;
+	  
+  }
+  
+  .split {
+	  height: inherit;
+	  width: 50%;
+	  position: fixed;
+	  z-index: 1;
+	  top: 0;
+  }
+  
+  #headerText1 {
+	  padding-right: 20%;
+	  font-size: 12px;
+  }
+  
+  #svgLogo {
+	  padding-left: 20%;
+  }
+  
+  #fed {
+	  padding-top: 2%;
+  }
+  
+  #pc{
+	  line-height: 0%;
+  }
+  
+  #profile {
+	  padding: 150px;
+	padding-block-end: 0px;
 	background-color: white;
-	display: grid;
+  }
+  
+  #profile::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+  }
+  
+  #profilePic {
+	  height: 75%;
+	  width: 75%;
+  }
+  
+  #about {
+	  float: left;
+	  width: 30%;
+	  padding: 5px;
+	  text-align: right;
+  }
+  
+  #details {
+	  float: left;
+	  width: 45%;
+	  padding: 5px;
+  }
+  
+  #photoArea {
+	  float: left;
+	  width: 20%;
+	  padding: 5px;
+  }
+  
+  #TicTacToeIntro {
+	  font-size: 15px;
+	  font-family: 'glacial-indifference';
+	  padding-bottom: 50px;
+  }
+  
+  @font-face{
+	  font-family: "glacial-indifference";
+	  src: url("assets/fonts/glacial-indifference-regular-webfont.ttf");
+	  src:
+	  url("assets/fonts/glacial-indifference-bold-webfont.woff") format("woff"),
+	  url("assets/fonts/glacial-indifference-italic-webfont.woff") format("woff"),
+	  url("assets/fonts/glacial-indifference-regular-webfont.woff") format("woff");
+  }
+  
+  .content {
+	padding: 16px;
 	text-align: center;
-	grid-template-columns: auto auto auto;
-	grid-template-rows: auto;
-	/* align-self: center; */
-}
-
-.gameColumns {
-	display: inline-block;
-	border: 1px solid #d8d8d8;
-	height: 200px;
-	width: 313px;
+	background-color: #f6f8f9;
+	height: 100%;
+	width: 100%;
+  }
+  
+  #game {
+	  background-color: white;
+	  display: grid;
+	  text-align: center;
+	  grid-template-columns: auto auto auto;
+	  grid-template-rows: auto;
+	  /* align-self: center; */
+  }
+  
+  .gameColumns {
+	  display: inline-block;
+	  border: 1px solid #d8d8d8;
+	  height: 200px;
+	  width: 313px;
+	  font-size: 30px;
+	  align-items: center;
+	  cursor: pointer;
+  }
+  
+  #topleft, #topcenter, #topright {
+	  border-bottom: 1px solid #2c2e30; 
+  }
+  
+  #topleft, #middleleft, #botleft {
+	  border-right: 1px solid #2c2e30;
+  }
+  
+  #topright, #middleright, #botright {
+	  border-left: 1px solid #2c2e30;
+  }
+  
+  #botleft, #botcenter, #botright {
+	  border-top: 1px solid #2c2e30;
+  }
+  
+  #gameContainer {
+	  width: 100%;
+	  overflow: hidden;
+  }
+  
+  #gameContainer::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+  }
+  
+  
+  #winsOne {
+	  font-size: 100px;
+  }
+  
+  #winsTwo {
+	  font-size: 100px;
+	  /* transform: translateY(-75%); */
+  }
+  
+  #playerTwo {
+	  float: left;
+	  width: 25%;
+	  text-align: center;
+  }
+  
+  #playerOne {
+	  float: left;
+	  width: 25%;
+	  text-align: center;
+  }
+  .splitGameArea {
+	  float: left;
+	  height: inherit;
+	  width: 50%;
+	  text-align: center;
+  }
+  
+  #statistics {
+	text-align: center;
+	width: 100%;
+	background-color: white;
+	/* padding-top:40px; */
+	padding-top: 40px;
+  }
+  
+  .splitStatistics {
+	float: left;
+	width:50%;
+	height: 100%;
+  }
+  
+  .gameVictoriesSplit {
 	font-size: 30px;
-	align-items: center;
-	cursor: pointer;
-}
-
-#topleft, #topcenter, #topright {
-	border-bottom: 1px solid #2c2e30; 
-}
-
-#topleft, #middleleft, #botleft {
-	border-right: 1px solid #2c2e30;
-}
-
-#topright, #middleright, #botright {
-	border-left: 1px solid #2c2e30;
-}
-
-#botleft, #botcenter, #botright {
-	border-top: 1px solid #2c2e30;
-}
-
-#gameContainer {
-	width: 100%;
-	overflow: hidden;
-}
-
-#gameContainer::after {
-	content: "";
-	clear: both;
-	display: table;
-}
-
-
-#winsOne {
-	font-size: 100px;
-}
-
-#winsTwo {
-	font-size: 100px;
-	/* transform: translateY(-75%); */
-}
-
-#playerTwo {
-	float: left;
-	display: inline;
-	width: 25%;
-	text-align: center;
-}
-
-#playerOne {
-	float: left;
-	width: 25%;
-	text-align: center;
-}
-.splitGameArea {
-	float: left;
-	height: inherit;
-	width: 50%;
-	text-align: center;
-}
-
-#statistics {
-  text-align: center;
-  width: 100%;
-  background-color: white;
-  /* padding-top:40px; */
-  padding-top: 40px;
-}
-
-.splitStatistics {
-  float: left;
-  width:50%;
-  height: 100%;
-}
-
-.gameVictoriesSplit {
-  font-size: 30px;
-  float:left;
-  width: 50%;
-}
-
-.splitGameHistory {
-  height: 100%;
-}
-
-.squareSVG {
-  fill:transparent;
-  stroke-width:3;
-  stroke:#d8d8d8;
-}
-
-.svgVictories {
-	text-align: center;
-	float: center;
-}
-
-#totalTime {
-	float: left;
-	width: 100%;
-	align-items: center;
-}
-
-#time{
-	font-size: 40px;
-}
-
-#timer {
 	float:left;
-	height:100%;
-	width:100%;
-	text-align: center;
-	background-color: #f6f7f8;
-}
-
-#currTimer {
-	font-size: 40px;
-}
+	width: 50%;
+  }
+  
+  .splitGameHistory {
+	height: 100%;
+  }
+  
+  .squareSVG {
+	fill:transparent;
+	stroke-width:3;
+	stroke:#d8d8d8;
+  }
+  
+  .svgVictories {
+	  text-align: center;
+	  float: center;
+  }
+  
+  #totalTime {
+	  float: left;
+	  width: 100%;
+	  align-items: center;
+  }
+  
+  #time{
+	  font-size: 40px;
+  }
+  
+  #timer {
+	  float:left;
+	  height:100%;
+	  width:100%;
+	  text-align: center;
+	  background-color: #f6f7f8;
+  }
+  
+  #currTimer {
+	  font-size: 40px;
+  }
+  

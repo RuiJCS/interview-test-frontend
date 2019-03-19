@@ -1,0 +1,263 @@
+@media screen and (max-width: 481px) {
+html {
+  font-size: 15px;
+  font-family: 'glacial-indifference';
+  overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.name {
+  font-size: 60px;
+  text-align: center;
+}
+
+.myheader {
+  background-color: #d8d8d8;
+  color: #2c2e30;
+  height: 100px;
+}
+
+#logo{
+	margin-left: 0px;
+	height: 100px;
+	width: 150px;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.headerText {
+	right: 0px;
+	padding-top: 10px;
+	height: inherit;
+	font-size: 10px;
+	text-align: right;
+}
+
+.svgLogo{
+	top: 0%;
+	left: 0px;
+	background: inherit;
+	
+}
+
+.split {
+	height: inherit;
+	width: 50%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+}
+
+#headerText1 {
+	padding-right: 20%;
+	font-size: 12px;
+}
+
+#svgLogo {
+	padding-left: 20%;
+}
+
+#fed {
+	padding-top: 2%;
+}
+
+#pc{
+	line-height: 0%;
+}
+
+#profile {
+	padding-top: 150px;
+  	background-color: white;
+}
+
+#profile::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+#about {
+	display: none;
+	width: 100%;
+	padding: 5px;
+	text-align: center;
+}
+
+#details {
+	width: 100%;
+	text-align: center;
+}
+
+#photoArea {
+	width: 100%;
+	height: 10%;
+	text-align: center;
+}
+
+#TicTacToeIntro {
+	font-size: 15px;
+	font-family: 'glacial-indifference';
+	padding-bottom: 50px;
+}
+
+@font-face{
+	font-family: "glacial-indifference";
+	src: url("assets/fonts/glacial-indifference-regular-webfont.ttf");
+	src:
+	url("assets/fonts/glacial-indifference-bold-webfont.woff") format("woff"),
+	url("assets/fonts/glacial-indifference-italic-webfont.woff") format("woff"),
+	url("assets/fonts/glacial-indifference-regular-webfont.woff") format("woff");
+}
+
+.content {
+  text-align: center;
+  background-color: #f6f8f9;
+  height: 100%;
+  width: 100%;
+}
+
+#game {
+	display: grid;
+	height: 300px;
+	width: 95%;
+	padding-left: 2%;
+	padding-right: 2.5%;
+	text-align: center;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto;
+	/* align-self: center; */
+}
+
+.gameColumns {
+	position: relative;
+	float: none;
+	display: block;
+	border: 2px solid #d8d8d8;
+	background-color: white;
+	height: 100%;
+	align-items: center;
+	cursor: pointer;
+}
+
+#topleft, #topcenter, #topright {
+	border-bottom: 2px solid #2c2e30; 
+}
+
+#topleft, #middleleft, #botleft {
+	border-right: 2px solid #2c2e30;
+}
+
+#topright, #middleright, #botright {
+	border-left: 2px solid #2c2e30;
+}
+
+#botleft, #botcenter, #botright {
+	border-top: 2px solid #2c2e30;
+}
+
+#gameContainer {
+	width: 100%;
+	text-align: center;
+}
+
+#gameContainer::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+
+#winsOne {
+	font-size: 40px;
+	transform: translateY(-75%);
+}
+
+#winsTwo {
+	font-size: 40px;
+	transform: translateY(-75%);
+}
+
+#playerTwo {
+	float: left;
+	width: 33.33%;
+	font-size: 12px;
+	text-align: center;
+}
+
+#playerOne {
+	float: left;
+	width: 33.33%;
+	font-size: 12px;
+	text-align: center;
+}
+
+#timer {
+	float:left;
+	width:33.33%;
+	text-align: center;
+}
+
+#currTimer {
+	font-size: 25px;
+}
+
+.splitGameArea {
+	float: left;
+	width: 33.33%;
+	text-align: center;
+}
+
+#statistics {
+  text-align: center;
+  width: 100%;
+  background-color: red;
+  /* padding-top:40px; */
+  padding-top: 40px;
+}
+
+.splitStatistics {
+  float: left;
+  width:50%;
+  height: 100%;
+}
+
+.gameVictoriesSplit {
+  font-size: 30px;
+  float:left;
+  width: 50%;
+}
+
+.splitGameHistory {
+  height: 100%;
+}
+
+.squareSVG {
+  fill:transparent;
+  stroke-width:3;
+  stroke:#d8d8d8;
+}
+
+.svgVictories {
+	text-align: center;
+	float: center;
+}
+
+#totalTime {
+	float: left;
+	width: 100%;
+	align-items: center;
+}
+
+#time{
+	font-size: 40px;
+}
+
+}
