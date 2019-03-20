@@ -5,6 +5,11 @@ html {
   overflow-x: hidden;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .name {
   font-size: 60px;
   text-align: center;
@@ -249,6 +254,59 @@ html {
 
 #currTimer {
 	font-size: 40px;
+}
+
+#footer {
+	margin-left: 5%;
+	float: left;
+	width: 100%;
+	background-color: #f6f8f9;
+}
+
+.footerDiv {
+	float: left;
+	width: 33.33%;
+	text-align: left;
+}
+
+
+.social {
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+}
+
+
+
+.footerText {
+	opacity: 0.7;
+}
+
+#emailDiv {
+    position:relative;
+    padding:0 0 0 20px;
+    margin:0 20px;
+    background:#ddd;
+    direction: rtl;
+    width: 200px;
+}
+
+#input_container { 
+    position:relative;
+    padding:0;
+    margin:0;
+}
+#input { 
+    height:20px;
+    margin:0;
+    padding-left:30px;
+}
+#input_img {
+    position:absolute;
+    bottom:8px;
+    left:10px;
+    width:10px;
+    height:10px;
 }
 
 }

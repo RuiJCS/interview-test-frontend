@@ -52,7 +52,7 @@
 	<div id="gameDiv" class="content"> 
 		<div id="TicTacToeIntro">
 			<h1>Tic tac toe games</h1>
-			<p>Welcome to the best game in the world</p>
+			<p id="par">Welcome to the best game in the world.</p>
 		</div>
 		<div id="gameContainer">
 			<div id="playerOne">
@@ -87,32 +87,29 @@
 		</div>
 		<div id="statisticsValues">
 			<div id="gameVictories" class="splitStatistics">
-				<h2>Game Victories %</h2>
+				<h2 id="gameVS">Game Victories %</h2>
 				<div class="gameVictoriesSplit">
-					<p>Player 1</p>
+					<p id="pOneString">Player 1</p>
 					<div>
 						<svg id="victoriesPlayerOne" height="100" width="100" class="svgVictories">
-							<circle cx="50" cy="50" r="45" stroke="#d8d8d8" fill="#d8d8d8" stroke-width="2" fill="transparent" />
-							<text id="svgTextP1V" text-anchor="middle" x="50" y="60" fill="#f6f8f9" style="text-align:center;">0%</text>
-							<!-- <text id="svgTextP1V" style="font-size: 24px;">
-								<textPath xlink:href="#p1" startOffset="50%" text-anchor="middle">0%</textPath>
-							</text> -->
+							<circle id="svgSCircle1" cx="50" cy="50" r="45" stroke="#d8d8d8" fill="#d8d8d8" stroke-width="2" fill="transparent" />
+							<text id="svgTextP1V" text-anchor="middle" font-size="10px;" x="50" y="60" fill="#f6f8f9" style="text-align:center;">0%</text>
 						</svg>
-						<svg id="victoriesPlayerOne" height="100" width="100" class="svgVictories">
-							<circle cx="50" cy="50" r="45" stroke="#d8d8d8" fill="#d8d8d8" stroke-width="2" fill="transparent" />
+						<svg id="lossesPlayerOne" height="100" width="100" class="svgVictories">
+							<circle id="svgSCircle2" cx="50" cy="50" r="45" stroke="#d8d8d8" fill="#d8d8d8" stroke-width="2" fill="transparent" />
 							<text id="svgTextP1L" text-anchor="middle" x="50" y="60" fill="#f6f8f9">0%</text>
 						</svg>
 					</div>
 				</div>
 				<div class="gameVictoriesSplit">
-					<p>Player 2</p>
+					<p id="pTwoString">Player 2</p>
 					<div>
-						<svg id="victoriesPlayerOne" height="100" width="100" class="svgVictories">
-							<circle cx="50" cy="50" r="45" stroke="#d8d8d8" fill="#d8d8d8" stroke-width="2" fill="transparent" />
+						<svg id="victoriesPlayerTwo" height="100" width="100" class="svgVictories">
+							<circle id="svgSCircle3" cx="50" cy="50" r="45" stroke="#d8d8d8" fill="#d8d8d8" stroke-width="2" fill="transparent" />
 							<text id="svgTextP2V" text-anchor="middle" x="50" y="60" fill="#f6f8f9">0%</text>
 						</svg>
-						<svg id="victoriesPlayerOne" height="100" width="100" class="svgVictories">
-							<circle cx="50" cy="50" r="45" stroke="#d8d8d8" fill="#d8d8d8" stroke-width="2" fill="transparent" />
+						<svg id="lossesPlayerTwo" height="100" width="100" class="svgVictories">
+							<circle id="svgSCircle4" cx="50" cy="50" r="45" stroke="#d8d8d8" fill="#d8d8d8" stroke-width="2" fill="transparent" />
 							<text id="svgTextP2L" text-anchor="middle" x="50" y="60" fill="#f6f8f9">0%</text>
 						</svg>
 					</div>
@@ -121,70 +118,70 @@
 			<div id="noGames" class="splitStatistics">
 				<div id="playedMatches" class="splitGameHistory">
 						<h2>Played Matches</h2>
-						<svg height="40" width="40">
+						<svg id="svgOCircle1" height="40" width="40">
 								<circle id="svgCircle1" cx="20" cy="20" r="15" stroke="#d8d8d8" stroke-width="2" fill="transparent" />
 						</svg>
-						<svg height="40" width="40">
+						<svg id="svgOCircle2" height="40" width="40">
 								<circle id="svgCircle2" cx="20" cy="20" r="15" stroke="#d8d8d8" stroke-width="2" fill="transparent" />
 						</svg>
-						<svg height="40" width="40">
+						<svg id="svgOCircle3" height="40" width="40">
 								<circle id="svgCircle3" cx="20" cy="20" r="15" stroke="#d8d8d8" stroke-width="2" fill="transparent" />
 						</svg>
-						<svg height="40" width="40">
+						<svg id="svgOCircle4" height="40" width="40">
 								<circle id="svgCircle4" cx="20" cy="20" r="15" stroke="#d8d8d8" stroke-width="2" fill="transparent" />
 						</svg>
-						<svg height="40" width="40">
+						<svg id="svgOCircle5" height="40" width="40">
 								<circle id="svgCircle5" cx="20" cy="20" r="15" stroke="#d8d8d8" stroke-width="2" fill="transparent" />
 						</svg>
-						<svg height="40" width="40">
+						<svg id="svgOCircle6" height="40" width="40">
 								<circle id="svgCircle6" cx="20" cy="20" r="15" stroke="#d8d8d8" stroke-width="2" fill="transparent" />
 						</svg>
-						<svg height="40" width="40">
+						<svg id="svgOCircle7" height="40" width="40">
 								<circle id="svgCircle7" cx="20" cy="20" r="15" stroke="#d8d8d8" stroke-width="2" fill="transparent" />
 						</svg>
-						<svg height="40" width="40">
+						<svg id="svgOCircle8" height="40" width="40">
 								<circle id="svgCircle8" cx="20" cy="20" r="15" stroke="#d8d8d8" stroke-width="2" fill="transparent" />
 						</svg>
-						<svg height="40" width="40">
+						<svg id="svgOCircle9" height="40" width="40">
 								<circle id="svgCircle9" cx="20" cy="20" r="15" stroke="#d8d8d8" stroke-width="2" fill="transparent" />
 						</svg> 
 				</div>
 				<div id="gameHistory" class="splitGameHistory">
 						<h2>Game History</h2>
-						<svg width="45" height="45">
-							<rect width="45" height="45" class="squareSVG"/>
+						<svg id="svgSquare1" width="45" height="45">
+							<rect width="45" height="45" class="squareSVG" stroke="#d8d8d8" stroke-width="1" fill="transparent"/>
 							<text text-anchor="middle" id="svgText1" x="50%" y="75%" fill="#2c2e30"></text>
 						</svg>
-						<svg width="45" height="45">
-							<rect width="45" height="45" class="squareSVG"/>
+						<svg id="svgSquare2" width="45" height="45">
+							<rect width="45" height="45" class="squareSVG" stroke="#d8d8d8" stroke-width="1" fill="transparent"/>
 							<text text-anchor="middle" id="svgText2" x="50%" y="75%" fill="#2c2e30"></text>
 						</svg>
-						<svg width="45" height="45">
-							<rect width="45" height="45" class="squareSVG"/>
+						<svg id="svgSquare3" width="45" height="45">
+							<rect width="45" height="45" class="squareSVG" stroke="#d8d8d8" stroke-width="1" fill="transparent"/>
 							<text text-anchor="middle" id="svgText3" x="50%" y="75%" fill="#2c2e30"></text>
 						</svg>
-						<svg width="45" height="45">
-							<rect width="45" height="45" class="squareSVG"/>
+						<svg id="svgSquare4" width="45" height="45">
+							<rect width="45" height="45" class="squareSVG" stroke="#d8d8d8" stroke-width="1" fill="transparent"/>
 							<text text-anchor="middle" id="svgText4" x="50%" y="75%" fill="#2c2e30"></text>
 						</svg>
-						<svg width="45" height="45">
-							<rect width="45" height="45" class="squareSVG"/>
+						<svg id="svgSquare5" width="45" height="45">
+							<rect width="45" height="45" class="squareSVG" stroke="#d8d8d8" stroke-width="1" fill="transparent"/>
 							<text text-anchor="middle" id="svgText5" x="50%" y="75%" fill="#2c2e30"></text>
 						</svg>
-						<svg width="45" height="45">
-							<rect width="45" height="45" class="squareSVG"/>
+						<svg id="svgSquare6" width="45" height="45">
+							<rect width="45" height="45" class="squareSVG" stroke="#d8d8d8" stroke-width="1" fill="transparent"/>
 							<text text-anchor="middle" id="svgText6" x="50%" y="75%" fill="#2c2e30"></text>
 						</svg>
-						<svg width="45" height="45">
-							<rect width="45" height="45" class="squareSVG"/>
+						<svg id="svgSquare7" width="45" height="45">
+							<rect width="45" height="45" class="squareSVG" stroke="#d8d8d8" stroke-width="1" fill="transparent"/>
 							<text text-anchor="middle" id="svgText7" x="50%" y="75%" fill="#2c2e30"></text>
 						</svg>
-						<svg width="45" height="45">
-							<rect width="45" height="45" class="squareSVG"/>
+						<svg id="svgSquare8" width="45" height="45">
+							<rect width="45" height="45" class="squareSVG" stroke="#d8d8d8" stroke-width="1" fill="transparent"/>
 							<text text-anchor="middle" id="svgText8" x="50%" y="75%" fill="#2c2e30"></text>
 						</svg>
-						<svg width="45" height="45">
-							<rect width="45" height="45" class="squareSVG"/>
+						<svg id="svgSquare9" width="45" height="45">
+							<rect width="45" height="45" class="squareSVG" stroke="#d8d8d8" stroke-width="1" fill="transparent"/>
 							<text text-anchor="middle" id="svgText9" x="50%" y="75%" fill="#2c2e30"></text>
 						</svg>
 				</div>
@@ -196,7 +193,31 @@
 		</div>
 	</div>
 
-	<script src="Scripts/main.js"></script>
+	<div id="footer">
+		<div id="aboutPage" class="footerDiv">
+			<p id="aboutP">About Page</p>
+			<p class="footerText">Play Tic-Tac-Toe anytime!</p>
+			<p class="footerText">Created by <a href="https://github.com/RuiJCS">RuiJCS</a></p>
+		</div>
+		<div id="contacts" class="footerDiv">
+			<p id="contP">Contacts</p>
+			<p class="footerText">(+351) 123 456 789</p>
+			<p class="footerText">Rua Sá da Bandeira, 111, Porto</p>
+		</div>
+		<div id="touch" class="footerDiv">
+			<p id="touchP">Stay in touch</p>
+			<img id="facebook" class="social" onclick="facebook()" src="assets/images/facebook.svg">
+			<img id="instagram" class="social" onclick="instagram()" src="assets/images/instagram.svg">
+			<img id="twitter" class="social" onclick="twitter()" src="assets/images/twitter.svg">
+			<p></p>
+			<div id="input_container">
+					<input type="text" id="input" value>
+					<img src="assets/images/send.svg" id="input_img">
+			</div>
+		</div>
+	</div>
+
 	<script src="Scripts/actions.js"></script>
+	<script src="Scripts/main.js"></script>
   </body>
 </html>

@@ -31,6 +31,7 @@ body {
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 1;
 }
 
 .headerText {
@@ -103,7 +104,8 @@ body {
 }
 
 #TicTacToeIntro {
-	font-size: 15px;
+	padding-top: 10px;
+	font-size: 13px;
 	font-family: 'glacial-indifference';
 	padding-bottom: 50px;
 }
@@ -117,6 +119,10 @@ body {
 	url("assets/fonts/glacial-indifference-regular-webfont.woff") format("woff");
 }
 
+#par {
+	font-size: 15px;
+}
+
 .content {
   text-align: center;
   background-color: #f6f8f9;
@@ -127,13 +133,12 @@ body {
 #game {
 	display: grid;
 	height: 300px;
-	width: 95%;
+	width: 90%;
 	padding-left: 2%;
-	padding-right: 2.5%;
+	margin-bottom: 30px;
 	text-align: center;
 	grid-template-columns: auto auto auto;
 	grid-template-rows: auto;
-	/* align-self: center; */
 }
 
 .gameColumns {
@@ -218,15 +223,12 @@ body {
 #statistics {
   text-align: center;
   width: 100%;
-  background-color: red;
-  /* padding-top:40px; */
-  padding-top: 40px;
+  background-color: white;
+  padding-top: 20px;
 }
 
-.splitStatistics {
-  float: left;
-  width:50%;
-  height: 100%;
+#statisticsIntro {
+	padding-bottom: 10%;
 }
 
 .gameVictoriesSplit {
@@ -242,7 +244,8 @@ body {
 .squareSVG {
   fill:transparent;
   stroke-width:3;
-  stroke:#d8d8d8;
+	stroke:#d8d8d8;
+	stroke-opacity: 1;
 }
 
 .svgVictories {
@@ -251,13 +254,45 @@ body {
 }
 
 #totalTime {
-	float: left;
 	width: 100%;
-	align-items: center;
+	align-items: 	 center;
 }
 
 #time{
 	font-size: 40px;
+}
+
+#footer {
+	padding-top: 10px;
+	text-align: center;
+	background-color: #f6f8f9;
+}
+
+.footerDiv {
+	width: 100%;
+	text-align: center;
+	font-size: 13px;
+}
+
+#aboutP, #contP, #touchP {
+	color: #2c2e30;
+	font-size: 18px;
+}
+
+.footerText {
+	opacity: 0.7;
+}
+
+.social {
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+}
+
+#email {
+	background-image: url('assets/images/send.svg');
+	background-repeat: no-repeat;
+	
 }
 
 }

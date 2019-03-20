@@ -8,7 +8,7 @@ const state = {
 	saved_player_wins: 0,
 	saved_pc_wins: 0,
 	wins : [],
-	needed_wins: 3,
+	needed_wins: 1,
 	max_length: 9,
 	starting_time: 0,
 	accumulated_time: 0,
@@ -257,6 +257,19 @@ var svgCircles = [
 	"svgCircle9",
 ]
 
+var svgSquares = [
+	"svgSquare1",
+	"svgSquare2",
+	"svgSquare3",
+	"svgSquare4",
+	"svgSquare5",
+	"svgSquare6",
+	"svgSquare7",
+	"svgSquare8",
+	"svgSquare9",
+]
+
+
 function updateStats() {
 	if(state.saved_player_wins + state.saved_pc_wins > 0){
 		var plWins = Math.round((state.saved_player_wins/(state.saved_player_wins + state.saved_pc_wins)) * 100);
@@ -273,10 +286,10 @@ function updateStats() {
 		for (let index = 0; index < svgTexts.length; index++) {
 			var text = document.getElementById(svgTexts[index]);
 			text.textContent = state.wins[index];			
-			text.style.fontSize= "30px";
+			// text.style.fontSize= "30px";
 			if (state.wins[index]!=null) {
 				var circ = document.getElementById(svgCircles[index]);
-				circ.style.fill = "#d8d8d8";
+				circ.setAttribute('fill',"#d8d8d8");
 			}
 		}
 	}
