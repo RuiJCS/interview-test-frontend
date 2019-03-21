@@ -257,6 +257,13 @@ var svgCircles = [
 	"svgCircle9",
 ]
 
+var svgSCircles = [
+	"svgSCircle1",
+	"svgSCircle2",
+	"svgSCircle3",
+	"svgSCircle4",
+]
+
 var svgSquares = [
 	"svgSquare1",
 	"svgSquare2",
@@ -278,18 +285,56 @@ function updateStats() {
 		winText.textContent = plWins + "%";
 		var looseText = document.getElementById("svgTextP1L");
 		looseText.textContent = 100 - plWins + "%";
-		var winText = document.getElementById("svgTextP2V");
-		winText.textContent = pcWins + "%";
-		var looseText = document.getElementById("svgTextP2L");
-		looseText.textContent = 100 - pcWins + "%";
+		var winTextPC = document.getElementById("svgTextP2V");
+		winTextPC.textContent = pcWins + "%";
+		var looseTextPC = document.getElementById("svgTextP2L");
+		looseTextPC.textContent = 100 - pcWins + "%";
+
+		var circles = []
+		svgSCircles.forEach(element => {
+			circles.push(document.getElementById(element));
+		});
+		if(plWins > 70) {
+			circles[0].setAttribute('stroke','#00DCA4');
+			circles[0].setAttribute('fill','#00DCA4');
+			circles[1].setAttribute('stroke','#00DCA4');
+			circles[1].setAttribute('fill','#00DCA4');
+			circles[2].setAttribute('stroke','red');
+			circles[2].setAttribute('fill','red');
+			circles[3].setAttribute('stroke','red');
+			circles[3].setAttribute('fill','red');
+		}
+		else if (plWins > 30 && plWins < 70) {
+			circles[0].setAttribute('stroke','#F1C40F');
+			circles[0].setAttribute('fill','#F1C40F');
+			circles[1].setAttribute('stroke','#F1C40F');
+			circles[1].setAttribute('fill','#F1C40F');
+			circles[2].setAttribute('stroke','#F1C40F');
+			circles[2].setAttribute('fill','#F1C40F');
+			circles[3].setAttribute('stroke','#F1C40F');
+			circles[3].setAttribute('fill','#F1C40F');
+		}
+		else {
+			circles[0].setAttribute('stroke','red');
+			circles[0].setAttribute('fill','red');
+			circles[1].setAttribute('stroke','red');
+			circles[1].setAttribute('fill','red');
+			circles[2].setAttribute('stroke','#00DCA4');
+			circles[2].setAttribute('fill','#00DCA4');
+			circles[3].setAttribute('stroke','#00DCA4');
+			circles[3].setAttribute('fill','#00DCA4');
+		}
 
 		for (let index = 0; index < svgTexts.length; index++) {
 			var text = document.getElementById(svgTexts[index]);
-			text.textContent = state.wins[index];			
-			// text.style.fontSize= "30px";
+			if (!isMobile) text.style.fontSize= "30px";
 			if (state.wins[index]!=null) {
 				var circ = document.getElementById(svgCircles[index]);
 				circ.setAttribute('fill',"#d8d8d8");
+				text.textContent = state.wins[index];		
+			}
+			else {
+				text.textContent = '';
 			}
 		}
 	}

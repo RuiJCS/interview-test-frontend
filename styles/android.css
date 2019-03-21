@@ -134,11 +134,11 @@ body {
 	display: grid;
 	height: 300px;
 	width: 90%;
-	padding-left: 2%;
 	margin-bottom: 30px;
 	text-align: center;
 	grid-template-columns: auto auto auto;
 	grid-template-rows: auto;
+	margin: auto 0;
 }
 
 .gameColumns {
@@ -289,10 +289,36 @@ body {
 	cursor: pointer;
 }
 
-#email {
-	background-image: url('assets/images/send.svg');
-	background-repeat: no-repeat;
-	
+#input_container {
+	float: center;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 10%;
+	padding-left: 25%;
+}
+
+
+#input {
+	float: left;
+	width: 50%;
+	height: 20px;
+	border: #d8d8d8 solid 2px;
+	color: #d8d8d8;
+}
+
+#sendImg {
+	float: left;
+	height: 26px;
+	width: 20px;
+	background: #d8d8d8;
+	cursor: pointer;
+}
+
+
+#input_img {
+	padding-top: 10%;
+	height: 80%;
+	width: 90%;
 }
 
 }

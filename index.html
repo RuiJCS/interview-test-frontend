@@ -211,8 +211,10 @@
 			<img id="twitter" class="social" onclick="twitter()" src="assets/images/twitter.svg">
 			<p></p>
 			<div id="input_container">
-					<input type="text" id="input" value>
-					<img src="assets/images/send.svg" id="input_img">
+					<input type="email" onfocus="emailInput()"  id="input" onblur="emailLost()" value="Subscribe our games!">
+					<div onclick="sendPress()" id="sendImg">
+						<img src="assets/images/send.svg" id="input_img"/>
+					</div>
 			</div>
 		</div>
 	</div>
