@@ -1,12 +1,15 @@
 
 window.onscroll = function () {backgroundTranparency()};
-
 window.onresize = function () {mobileCheck()};
 window.onload = function () {mobileCheck()};
 
 var header = document.getElementById('myHeader');
 
-function backgroundTranparency(params) {
+
+/**
+ * Functions that changes the header transparency
+ */
+function backgroundTranparency() {
     if (window.pageYOffset > 150) {
         header.style.backgroundColor= 'transparent';
     }
@@ -27,11 +30,15 @@ var cells = [
 	"botright",
 ]
 
+/**
+ * Function that fixes the grid depending on what browser it is being read
+ */
 function gridFix() {
 	var gameContainer = document.getElementById("game");
 	var boxHeight = gameContainer.clientHeight / 3;
 	var boxWidth = gameContainer.clientWidth /3;
 	
+	//setting game cells aspect
 	cells.forEach(element => {
 		var box = document.getElementById(element);
 		box.style.height = boxHeight + "px";
@@ -40,7 +47,7 @@ function gridFix() {
 		box.style.maxWidth = boxWidth + "px";
 	});
 	
-	if(isMobile) {
+	if(isMobile) { // if on mobile center game box
 		var gameContainer = document.getElementById('gameDiv');
 		var game = document.getElementById('game');
 		var marginW = gameContainer.clientWidth - game.clientWidth;
@@ -63,9 +70,6 @@ var Pstrings = [
 	'pTwoString',
 ]
 
-var Bstrings = [
-	'gameVS',
-]
 var svgOCircles = [
 	"svgOCircle1",
 	"svgOCircle2",
@@ -78,10 +82,16 @@ var svgOCircles = [
 	"svgOCircle9",
 ]
 
+//Var that checks what type of browser is being used
 var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+/**
+ * Function that defines some behaviours based on the type of browser in use
+ */
 function mobileCheck() {
 	
-	if( isMobile) {
+	if( isMobile) { // if the browser is mobile
+		//changing the main division childs order
 		var content = document.getElementById('game');
 		var parent = content.parentNode;
 		var pTwo = document.getElementById('playerTwo');
@@ -89,29 +99,33 @@ function mobileCheck() {
 		timer.firstElementChild.style.fontSize = '20px';
 		parent.insertBefore(content, parent.firstChild);
 		parent.insertBefore(timer,pTwo);
+
+		// Changing all the game percentage elements
 		svgs.forEach(element => {
 			var svg = document.getElementById(element);
 			var circle = svg.firstElementChild;
-			var text = svg.lastElementChild;
-			svg.setAttribute('height',60);
+			var text = circle.nextElementSibling;
+			var letter = svg.lastElementChild;
+			svg.setAttribute('height',90);
 			svg.setAttribute('width',60);
-			circle.setAttribute('r',25);
+			circle.setAttribute('r',20);
 			circle.setAttribute('cy',30);
 			circle.setAttribute('cx',30);
 			text.setAttribute('x', 30);
 			text.setAttribute('y',37);
 			text.style.fontSize = '18px';
+			letter.setAttribute('x',30);
+			letter.setAttribute('y', 75);
+			letter.style.fontSize = '20px';
 		});
+
+		// Changing Player one and player two Strings font size
 		Pstrings.forEach(element => {
 			var string = document.getElementById(element);
 			string.style.fontSize = '20px';
 		});
 	
-		Bstrings.forEach(element => {
-			var string = document.getElementById(element);
-			string.style.fontSize = '15px';
-		});
-	
+		// Changing game played circles sizes for mobile
 		svgOCircles.forEach(element => {
 			var svg = document.getElementById(element);
 			var svgCircle = svg.firstElementChild;
@@ -121,7 +135,8 @@ function mobileCheck() {
 			svgCircle.setAttribute('cy',13);
 			svgCircle.setAttribute('cx',13);
 		});
-	
+
+		// Changing wins records squares sizes for mobile
 		svgSquares.forEach (element => {
 			var svg = document.getElementById(element);
 			var square = svg.firstElementChild;
@@ -135,6 +150,7 @@ function mobileCheck() {
 			text.style.fontSize = '20px';
 		});
 	
+		// Changing timers font size for mobile
 		var totalTimer = document.getElementById('totalTime');
 		totalTimer.style.fontSize = '12px';
 		var timer = document.getElementById('time');
@@ -142,6 +158,7 @@ function mobileCheck() {
 	
 	}
 	else {
+		// Centering Player One and Player Two Strings on desktop Version
 		var gameContainer = document.getElementById("gameContainer");
 		var playerOne = document.getElementById("playerOne");
 		var poHeight = playerOne.offsetHeight;
@@ -163,29 +180,34 @@ function mobileCheck() {
 	
 }
 
-
+//Opens Facebook Link
 function facebook() {
 	window.open("https://www.facebook.com/"); 
 }
 
+//Opens Instagram Link
 function instagram() {
 	window.open("https://www.instagram.com/");
 }
 
+//Opens Twitter Link
 function twitter() {
 	window.open("https://twitter.com/");
 }
 
+// 
 function emailInput() {
 	var input = document.getElementById('input');
 	input.value = '';
 }
 
+// Email box lost focus
 function emailLost() {
 	var input = document.getElementById('input');
 	input.value = 'Subscribe our games!';
 }
 
+//Action for pressing the send icon press.
 function sendPress() {
 	alert('this does nothing');
 }

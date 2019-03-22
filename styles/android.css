@@ -1,7 +1,7 @@
 @media screen and (max-width: 481px) {
 html {
   font-size: 15px;
-  font-family: 'glacial-indifference';
+  font-family: 'GlacialIndifferenceRegular'; 
   overflow-x: hidden;
 }
 
@@ -106,17 +106,7 @@ body {
 #TicTacToeIntro {
 	padding-top: 10px;
 	font-size: 13px;
-	font-family: 'glacial-indifference';
 	padding-bottom: 50px;
-}
-
-@font-face{
-	font-family: "glacial-indifference";
-	src: url("assets/fonts/glacial-indifference-regular-webfont.ttf");
-	src:
-	url("assets/fonts/glacial-indifference-bold-webfont.woff") format("woff"),
-	url("assets/fonts/glacial-indifference-italic-webfont.woff") format("woff"),
-	url("assets/fonts/glacial-indifference-regular-webfont.woff") format("woff");
 }
 
 #par {

@@ -1,11 +1,30 @@
 @media screen and (min-width: 481px) {
 html {
   font-size: 15px;
-  font-family: 'glacial-indifference';
+  font-family: 'GlacialIndifferenceRegular'; 
   overflow-x: hidden;
 }
 
+@font-face {
+    font-family: 'glacial_indifferenceregular';
+    src: url('../assets/fonts/glacialindifference-regular-webfont-webfont.woff2') format('woff2'),
+         url('../assets/fonts/glacialindifference-regular-webfont-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'glacial_indifferencebold';
+    src: url('../assets/fonts/glacialindifference-bold-webfont-webfont.woff2') format('woff2'),
+         url('../assets/fonts/glacialindifference-bold-webfont-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
+	font-family: 'GlacialIndifferenceRegular'; 
     margin: 0;
     padding: 0;
 }
@@ -106,21 +125,13 @@ body {
 
 #TicTacToeIntro {
 	font-size: 15px;
-	font-family: 'glacial-indifference';
+	font-family: 'GlacialIndifferenceRegular'; 
 	padding-bottom: 50px;
 }
 
-@font-face{
-	font-family: "glacial-indifference";
-	src: url("assets/fonts/glacial-indifference-regular-webfont.ttf");
-	src:
-	url("assets/fonts/glacial-indifference-bold-webfont.woff") format("woff"),
-	url("assets/fonts/glacial-indifference-italic-webfont.woff") format("woff"),
-	url("assets/fonts/glacial-indifference-regular-webfont.woff") format("woff");
-}
-
 .content {
-  padding: 16 px;
+  padding: 16px;
+  padding-top: 30px;
   text-align: center;
   background-color: #f6f8f9;
   height: 100%;
